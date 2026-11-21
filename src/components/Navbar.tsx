@@ -9,7 +9,6 @@ const navItems = [
   { href: "#projetos", label: "Projetos" },
   { href: "#formacao", label: "Formação" },
   { href: "#hobbies", label: "Hobbies" },
-  { href: "#contato", label: "Contato" },
 ];
 
 export default function Navbar() {

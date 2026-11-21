@@ -8,8 +8,7 @@ Site de portfólio pessoal desenvolvido com **Next.js (App Router)**, **TypeScri
 - Tema claro/escuro com alternância no menu
 - Menu fixo com destaque da seção ativa e versão hambúrguer no celular
 - Animações suaves de entrada ao rolar a página
-- Seções: **Início (Hero)**, **Skills**, **Projetos**, **Formação & Certificados**, **Hobbies** e **Contato**
-- Seção de contato com links diretos para e-mail, LinkedIn e GitHub
+- Seções: **Início (Hero)**, **Skills**, **Projetos**, **Formação & Certificados** e **Hobbies**
 - SEO básico (metadata, Open Graph, Twitter card) e favicon
 - Dados centralizados em `/src/data` para edição fácil sem alterar componentes
 
@@ -36,7 +35,6 @@ Site de portfólio pessoal desenvolvido com **Next.js (App Router)**, **TypeScri
     │   └── page.tsx
     ├── components/
     │   ├── CertificateModal.tsx
-    │   ├── ContactSection.tsx
     │   ├── EducationCertificatesSection.tsx
     │   ├── Footer.tsx
     │   ├── Hero.tsx
@@ -95,7 +93,7 @@ Edite os arquivos em `src/data/` para atualizar o conteúdo sem alterar componen
 - `education.ts` — formação e trajetória (linha do tempo)
 - `certificates.ts` — certificados (nome, instituição, data, imagem e link de verificação)
 - `hobbies.ts` — hobbies (nome, descrição e imagem)
-- `contact.ts` — e-mail, LinkedIn e GitHub
+- `contact.ts` — e-mail, LinkedIn e GitHub (links exibidos no rodapé)
 
 ## Observações
 

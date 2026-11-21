@@ -31,12 +31,6 @@ export default function Hero() {
                 >
                   Ver projetos
                 </a>
-                <a
-                  href="#contato"
-                  className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-700 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:hover:border-indigo-700 dark:hover:text-indigo-300"
-                >
-                  Entrar em contato
-                </a>
               </div>
             </div>
           </Reveal>
