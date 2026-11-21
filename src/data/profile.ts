@@ -7,5 +7,5 @@ export const profile: Profile = {
     "Transformando ideias em soluções web úteis, com curiosidade, código e vontade de evoluir todos os dias.",
   about:
     "Atuo no desenvolvimento de aplicações web e gosto de unir aprendizado acadêmico com projetos práticos. Busco escrever código claro, colaborar em equipe e criar experiências que façam sentido para as pessoas.",
-  photo: "/profile-placeholder.svg",
+  photo: "/marino.jpeg",
 };
