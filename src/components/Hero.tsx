@@ -56,9 +56,6 @@ export default function Hero() {
               <div className="pointer-events-none absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-indigo-500/20 blur-2xl" />
               <div className="pointer-events-none absolute -right-4 -top-4 h-20 w-20 rounded-full bg-sky-400/20 blur-2xl" />
             </div>
-            <p className="mt-3 text-center text-xs text-slate-500 dark:text-slate-400">
-              Espaço para sua foto de perfil
-            </p>
           </Reveal>
         </div>
       </div>
