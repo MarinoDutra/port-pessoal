@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
 :root {
   color-scheme: light;
 }
@@ -14,8 +10,26 @@ html {
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 24%);
+  background-attachment: fixed;
+}
+
+.dark body {
+  background-image:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.14), transparent 24%);
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.25);
 }
 
 section {

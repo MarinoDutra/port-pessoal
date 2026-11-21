@@ -9,10 +9,7 @@ interface CertificateModalProps {
   onClose: () => void;
 }
 
-export default function CertificateModal({
-  certificate,
-  onClose,
-}: CertificateModalProps) {
+export default function CertificateModal({ certificate, onClose }: CertificateModalProps) {
   useEffect(() => {
     if (!certificate) return;
 
@@ -34,7 +31,7 @@ export default function CertificateModal({
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/70 p-4"
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-label={`Certificado: ${certificate.name}`}
@@ -50,23 +47,13 @@ export default function CertificateModal({
           aria-label="Fechar modal"
           className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="h-5 w-5"
-            aria-hidden="true"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </button>
 
         <div className="pr-10">
-          <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-            {certificate.name}
-          </h3>
+          <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{certificate.name}</h3>
           <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
             {certificate.institution} • {certificate.date}
           </p>
@@ -87,14 +74,14 @@ export default function CertificateModal({
             href={certificate.verificationUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
+            className="inline-flex items-center rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
           >
             Ver verificação
           </a>
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+            className="inline-flex items-center rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
           >
             Fechar
           </button>

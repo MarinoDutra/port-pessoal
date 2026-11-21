@@ -4,19 +4,20 @@ Site de portfólio pessoal desenvolvido com **Next.js (App Router)**, **TypeScri
 
 ## Funcionalidades
 
-- Página única e responsiva
+- Página única, responsiva e com design moderno
 - Tema claro/escuro com alternância no menu
-- Menu fixo com navegação por seções
-- **Skills** organizadas por categoria com nível
-- **Formação acadêmica** em linha do tempo e **certificados** em grade (clique para ampliar e acessar verificação)
-- **Hobbies** em cards com imagem e descrição
-- **Contato** com formulário validado (nome, e-mail e mensagem) e links para e-mail, LinkedIn e GitHub
+- Menu fixo com destaque da seção ativa e versão hambúrguer no celular
+- Animações suaves de entrada ao rolar a página
+- Seções: **Início (Hero)**, **Skills**, **Projetos**, **Formação & Certificados**, **Hobbies** e **Contato**
+- Formulário de contato com envio real de e-mail via **Resend** (com estados de carregamento, sucesso e erro)
+- SEO básico (metadata, Open Graph, Twitter card) e favicon
 - Dados centralizados em `/src/data` para edição fácil sem alterar componentes
 
 ## Estrutura de pastas
 
 ```text
 .
+├── .env.example
 ├── .eslintrc.json
 ├── .gitignore
 ├── next.config.mjs
@@ -25,12 +26,19 @@ Site de portfólio pessoal desenvolvido com **Next.js (App Router)**, **TypeScri
 ├── README.md
 ├── tailwind.config.ts
 ├── tsconfig.json
-└── src
-    ├── app
+├── public/
+│   └── profile-placeholder.svg
+└── src/
+    ├── app/
+    │   ├── api/
+    │   │   └── contact/
+    │   │       └── route.ts
     │   ├── globals.css
+    │   ├── icon.tsx
     │   ├── layout.tsx
+    │   ├── opengraph-image.tsx
     │   └── page.tsx
-    ├── components
+    ├── components/
     │   ├── CertificateModal.tsx
     │   ├── ContactSection.tsx
     │   ├── EducationCertificatesSection.tsx
@@ -38,59 +46,70 @@ Site de portfólio pessoal desenvolvido com **Next.js (App Router)**, **TypeScri
     │   ├── Hero.tsx
     │   ├── HobbiesSection.tsx
     │   ├── Navbar.tsx
+    │   ├── ProjectsSection.tsx
+    │   ├── Reveal.tsx
+    │   ├── SkillIcon.tsx
     │   ├── SkillsSection.tsx
     │   └── ThemeToggle.tsx
-    ├── data
+    ├── data/
     │   ├── certificates.ts
     │   ├── contact.ts
     │   ├── education.ts
     │   ├── hobbies.ts
     │   ├── profile.ts
+    │   ├── projects.ts
     │   └── skills.ts
-    └── types
+    └── types/
         └── index.ts
 ```
 
 ## Pré-requisitos
 
-- [Node.js](https://nodejs.org/) 18.17 ou superior (recomendado: versão LTS recente)
-- npm (incluído com o Node.js)
+- [Node.js](https://nodejs.org/) 18.17 ou superior (recomendado: LTS)
+- npm
 
 ## Como rodar o projeto
 
 1. **Instale as dependências**
-
    ```bash
    npm install
    ```
 
-2. **Inicie o servidor de desenvolvimento**
+2. **Configure as variáveis de ambiente**
+   - Copie `.env.example` para `.env.local`
+   - Preencha `RESEND_API_KEY` com sua chave do [Resend](https://resend.com/)
+   ```bash
+   cp .env.example .env.local
+   ```
 
+3. **Inicie o servidor de desenvolvimento**
    ```bash
    npm run dev
    ```
 
-3. Abra [http://localhost:3000](http://localhost:3000) no navegador.
+4. Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
 ## Scripts disponíveis
 
 - `npm run dev` — inicia o ambiente de desenvolvimento
-- `npm run build` — gera a versão de produção
-- `npm run start` — inicia o servidor com a build de produção
+- `npm run build` — gera a build de produção
+- `npm run start` — inicia o servidor de produção
 - `npm run lint` — executa o lint do projeto
 
 ## Personalização dos dados
 
-Edite os arquivos em `src/data/` para atualizar o conteúdo sem mexer nos componentes:
+Edite os arquivos em `src/data/` para atualizar o conteúdo sem alterar componentes:
 
-- `profile.ts` — nome, título e apresentação
-- `skills.ts` — categorias e níveis de habilidades
-- `education.ts` — formação acadêmica (linha do tempo)
+- `profile.ts` — nome, título, introdução, apresentação e foto
+- `skills.ts` — categorias, habilidades e níveis
+- `projects.ts` — projetos (nome, descrição, tecnologias e link)
+- `education.ts` — formação e trajetória (linha do tempo)
 - `certificates.ts` — certificados (nome, instituição, data, imagem e link de verificação)
 - `hobbies.ts` — hobbies (nome, descrição e imagem)
 - `contact.ts` — e-mail, LinkedIn e GitHub
 
 ## Observações
 
-- O formulário de contato possui validação no cliente e, ao enviar com sucesso, abre o aplicativo de e-mail padrão via `mailto:` para concluir o envio.
-- Imagens de certificados e hobbies usam URLs de exemplo/remotas; você pode substituí-las por imagens próprias (locais em `public/` ou URLs).
+- O envio do formulário depende de uma chave válida do Resend em `.env.local`. Sem domínio verificado, o Resend pode limitar o envio em ambiente de teste (consulte a [documentação do Resend](https://resend.com/docs)).
+- Substitua `public/profile-placeholder.svg` pela sua foto (e atualize `photo` em `src/data/profile.ts` se usar outro nome/arquivo).
+- Atualize os certificados de exemplo em `src/data/certificates.ts` com seus dados reais.

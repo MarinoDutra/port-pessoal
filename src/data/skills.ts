@@ -6,14 +6,24 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Python", level: "Intermediário" },
       { name: "PHP", level: "Intermediário" },
-      { name: "Spring Boot", level: "Intermediário" },
+      { name: "Spring Boot (Java)", level: "Intermediário" },
+      { name: "Java", level: "Intermediário" },
     ],
   },
   {
     category: "Front-end",
     skills: [
-      { name: "Next.js", level: "Intermediário" },
+      { name: "Next.js", level: "Básico" },
       { name: "React", level: "Intermediário" },
+      { name: "HTML/CSS", level: "Intermediário" },
+      { name: "TypeScript", level: "Intermediário" },
+    ],
+  },
+  {
+    category: "Banco de Dados & Ferramentas",
+    skills: [
+      { name: "MySQL", level: "Intermediário" },
+      { name: "Git/GitHub", level: "Intermediário" },
     ],
   },
 ];

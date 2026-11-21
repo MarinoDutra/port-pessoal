@@ -39,5 +39,14 @@ export interface ContactInfo {
 export interface Profile {
   name: string;
   headline: string;
+  intro: string;
   about: string;
+  photo: string;
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  technologies: string[];
+  githubUrl: string;
 }
