@@ -9,7 +9,7 @@ Site de portfólio pessoal desenvolvido com **Next.js (App Router)**, **TypeScri
 - Menu fixo com destaque da seção ativa e versão hambúrguer no celular
 - Animações suaves de entrada ao rolar a página
 - Seções: **Início (Hero)**, **Skills**, **Projetos**, **Formação & Certificados**, **Hobbies** e **Contato**
-- Formulário de contato com envio real de e-mail via **Resend** (com estados de carregamento, sucesso e erro)
+- Seção de contato com links diretos para e-mail, LinkedIn e GitHub
 - SEO básico (metadata, Open Graph, Twitter card) e favicon
 - Dados centralizados em `/src/data` para edição fácil sem alterar componentes
 
@@ -17,7 +17,6 @@ Site de portfólio pessoal desenvolvido com **Next.js (App Router)**, **TypeScri
 
 ```text
 .
-├── .env.example
 ├── .eslintrc.json
 ├── .gitignore
 ├── next.config.mjs
@@ -30,9 +29,6 @@ Site de portfólio pessoal desenvolvido com **Next.js (App Router)**, **TypeScri
 │   └── profile-placeholder.svg
 └── src/
     ├── app/
-    │   ├── api/
-    │   │   └── contact/
-    │   │       └── route.ts
     │   ├── globals.css
     │   ├── icon.tsx
     │   ├── layout.tsx
@@ -75,19 +71,12 @@ Site de portfólio pessoal desenvolvido com **Next.js (App Router)**, **TypeScri
    npm install
    ```
 
-2. **Configure as variáveis de ambiente**
-   - Copie `.env.example` para `.env.local`
-   - Preencha `RESEND_API_KEY` com sua chave do [Resend](https://resend.com/)
-   ```bash
-   cp .env.example .env.local
-   ```
-
-3. **Inicie o servidor de desenvolvimento**
+2. **Inicie o servidor de desenvolvimento**
    ```bash
    npm run dev
    ```
 
-4. Abra [http://localhost:3000](http://localhost:3000) no navegador.
+3. Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
 ## Scripts disponíveis
 
@@ -110,6 +99,5 @@ Edite os arquivos em `src/data/` para atualizar o conteúdo sem alterar componen
 
 ## Observações
 
-- O envio do formulário depende de uma chave válida do Resend em `.env.local`. Sem domínio verificado, o Resend pode limitar o envio em ambiente de teste (consulte a [documentação do Resend](https://resend.com/docs)).
 - Substitua `public/profile-placeholder.svg` pela sua foto (e atualize `photo` em `src/data/profile.ts` se usar outro nome/arquivo).
 - Atualize os certificados de exemplo em `src/data/certificates.ts` com seus dados reais.
